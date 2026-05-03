@@ -1,0 +1,14 @@
+name = "space-ipsum"
+main = "workers/api.js"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "space-ipsum"
+database_id = "26328664-7fe9-4728-b29c-f6119484afe8"
+
+[triggers]
+crons = ["0 2 * * *"]  # 2am UTC nightly
+
+[ai]
+binding = "AI"
