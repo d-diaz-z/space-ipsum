@@ -1,0 +1,183 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a1a;
+    color: #e0e0ff;
+    font-family: 'Georgia', serif;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Starfield background */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 50%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 50% 10%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 80%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 40%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 20% 90%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 60%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 80% 15%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 70%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 15% 55%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 85% 65%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 35%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 85%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 75% 25%, #fff 0%, transparent 100%),
+        radial-gradient(1px 1px at 45% 45%, #fff 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #a78bfa;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 30px rgba(167, 139, 250, 0.5);
+    margin-bottom: 12px;
+}
+
+.tagline {
+    color: #6b7280;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.controls {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(167, 139, 250, 0.2);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.controls label {
+    display: block;
+    color: #a78bfa;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.input-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+input[type="number"] {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    border-radius: 8px;
+    color: #e0e0ff;
+    font-size: 1.2rem;
+    padding: 10px 16px;
+    width: 80px;
+    text-align: center;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: #a78bfa;
+}
+
+button {
+    background: #a78bfa;
+    border: none;
+    border-radius: 8px;
+    color: #0a0a1a;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    padding: 10px 24px;
+    text-transform: uppercase;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: #c4b5fd;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background: #374151;
+    color: #6b7280;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#copy {
+    background: transparent;
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #a78bfa;
+}
+
+#copy:hover:not(:disabled) {
+    background: rgba(167, 139, 250, 0.1);
+}
+
+.output {
+    min-height: 200px;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    text-align: center;
+    padding: 60px 0;
+}
+
+#loading-text {
+    color: #a78bfa;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+}
+
+#result p {
+    color: #c4b5fd;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 24px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid rgba(167, 139, 250, 0.3);
+    border-radius: 4px;
+}
+
+#result p:last-child {
+    margin-bottom: 0;
+}
