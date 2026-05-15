@@ -1,3 +1,4 @@
+// app.js
 const API_URL = "https://space-ipsum.dft1.workers.dev";
 
 const loadingMessages = [
